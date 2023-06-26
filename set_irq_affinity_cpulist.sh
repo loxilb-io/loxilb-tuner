@@ -26,8 +26,6 @@
 # and/or other materials provided with the distribution.
 #
 
-ROOT_DIR=$(readlink -f $(dirname $0))/../..
-
 if [ -z $2 ]; then
 	echo "usage: $0 <cpu list> <interface or IB device> "
 	echo "       <cpu list> can be either a comma separated list of single core numbers (0,1,2,3) or core groups (0-3)"
@@ -38,7 +36,7 @@ interface=$2
 NCPUS=$(cat /proc/cpuinfo | grep -c processor)
 ONLINE_CPUS=$(cat /proc/cpuinfo | grep processor | cut -d ":" -f 2)
 
-source $ROOT_DIR/test/script/common_irq_affinity.sh
+source ./common_irq_affinity.sh
 
 IRQS=$( get_irq_list $interface )
 
