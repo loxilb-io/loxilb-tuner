@@ -17,6 +17,7 @@ sysctl net.ipv4.tcp_fin_timeout >> sysctl_orig.txt
 echo "
 net.ipv4.tcp_keepalive_time=30
 net.ipv4.ip_local_port_range=1024 65000
+net.ipv4.tcp_tw_reuse=1
 net.core.netdev_max_backlog=10000
 net.ipv4.tcp_retries1=3
 net.ipv4.tcp_retries2=3
